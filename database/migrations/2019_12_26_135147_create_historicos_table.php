@@ -18,7 +18,7 @@ class CreateHistoricosTable extends Migration
             //$table->unsignedBigInteger('user_id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->enum('type', ['I', 'O', 'T']);
+            $table->enum('type', ['E', 'S', 'T']);   //E ENTRADA , S SAIDA
             $table->double('montante', 10, 2);
             $table->double('total_anterior', 10, 2);
             $table->double('total_depois', 10, 2);

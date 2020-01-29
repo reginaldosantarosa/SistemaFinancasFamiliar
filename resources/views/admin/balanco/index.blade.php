@@ -18,7 +18,7 @@
             <a href="{{ route('balanco.deposito') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>
                  Recarregar</a>
             @if ($amount > 0)
-                 <a href="{{ route('admin.balanco') }}" class="btn btn-danger"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                 <a href="{{ route('balanco.sacar') }}" class="btn btn-danger"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                  Sacar</a>
             @endif
 
@@ -30,9 +30,9 @@
             @endif
         </div>
 
-
-
         <div class="box-body">
+
+            @include('admin.includes.alerts')
 
                 <div class="small-box bg-green">
                     <div class="inner">
