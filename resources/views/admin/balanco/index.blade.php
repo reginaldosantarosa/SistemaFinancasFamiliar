@@ -17,13 +17,13 @@
         <div class="box-header">
             <a href="{{ route('balanco.deposito') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>
                  Recarregar</a>
-            @if ($amount > 0)
+            @if ($montante > 0)
                  <a href="{{ route('balanco.sacar') }}" class="btn btn-danger"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                  Sacar</a>
             @endif
 
-            @if ($amount > 0)
-                 <a href="{{ route('admin.balanco') }}" class="btn btn-info">
+            @if ($montante > 0)
+                 <a href="{{ route('balanco.transferir') }}" class="btn btn-info">
                     <i class="fa fa-exchange" aria-hidden="true"></i>
                      Transferir
                 </a>
@@ -36,7 +36,7 @@
 
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>R$ {{ number_format($amount, 2, ',', '') }}</h3>
+                        <h3>R$ {{ number_format($montante, 2, ',', '') }}</h3>
                     </div>
                     <div class="icon">
                         <i class="ion ion-cash"></i>

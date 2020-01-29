@@ -4,6 +4,15 @@
 Route::group(['middleware' => ['auth'],'namespace'=>'Admin','prefix'=>'admin'], function () {
     //Route::get('admin/balanco', 'Admin\BalancoController@index')->name('admin.balanco');
 
+    Route::get('tranferir', 'BalancoController@transferir')->name('balanco.transferir'); // ja com prefixo admin
+    Route::post('confirmar-transferencia', 'BalancoController@confirmarTransferencia')->name('confirmar.transferencia'); // ja com prefixo admin
+
+    Route::post('tranferir', 'BalancoController@transferirStore')->name('transferir.store'); // ja com prefixo admin
+
+
+
+    Route::get('historico', 'BalancoController@historico')->name('admin.historico'); // ja com prefixo admin
+
     Route::get('sacar', 'BalancoController@sacar')->name('sacar.store'); // ja com prefixo admin
     Route::post('sacar', 'BalancoController@sacarStore')->name('balanco.sacar'); // ja com prefixo admin
 
