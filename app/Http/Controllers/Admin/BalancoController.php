@@ -27,9 +27,6 @@ class BalancoController extends Controller
         return view('admin.balanco.deposito');
     }
 
-
-
-
     public function depositoStore(MoneyValidacao $request)
     {
         $balanco = auth()->user()->balanco()->firstOrCreate([]); //se existe ele tras o caramara...se nao existe ele cria um novo
@@ -47,9 +44,7 @@ class BalancoController extends Controller
     }
 
 
-
-    public function sacar()
-    {
+    public function sacar()    {
 
         return view('admin.balanco.sacar');
     }
@@ -118,7 +113,6 @@ class BalancoController extends Controller
             ->route('balance.transferir')
             ->with('error', $response['message']);
     }
-
 
 
     public function historico(Historico $historico)
