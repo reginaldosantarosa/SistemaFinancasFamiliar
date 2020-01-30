@@ -28,7 +28,6 @@ Route::post('atualiza-perfil', 'Admin\UserController@perfilUpdate')->name('perfi
 Route::get('meu-perfil', 'Admin\UserController@perfil')->name('perfil')->middleware('auth');
 
 
-
 Route::get('/', 'Site\SiteController@index')->name('home');
 
 Auth::routes();

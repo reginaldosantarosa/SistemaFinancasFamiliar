@@ -70,7 +70,7 @@
                 <div class="top-right links">
                     @auth
                     <a href="{{ route('admin.home') }}">Home</a>
-                    <a href="{{ route('profile') }}">Meu Perfil</a>
+                    <a href="{{ route('perfil') }}">Meu Perfil</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Reginaldo
                 </div>
 
                 <div class="links">
