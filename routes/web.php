@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'Admin','prefix'=>'admin'], 
 
 
 
-Route::post('atualizar-perfil', 'Admin\UserController@perfilUpdate')->name('perfil.update')->middleware('auth');
+Route::post('atualiza-perfil', 'Admin\UserController@perfilUpdate')->name('perfil.update')->middleware('auth');
 Route::get('meu-perfil', 'Admin\UserController@perfil')->name('perfil')->middleware('auth');
 
 
