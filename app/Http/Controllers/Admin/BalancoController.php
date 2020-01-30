@@ -11,8 +11,8 @@ use App\Http\Requests\MoneyValidacao;
 
 class BalancoController extends Controller
 {
-    public function index()
-    {
+    private $totaPaginas=2;
+    public function index()  {
 
         $balanco = auth()->user()->balanco;
 
@@ -120,24 +120,22 @@ class BalancoController extends Controller
         $historicos = auth()->user()
             ->historicos()
             ->with(['userRecebedor'])
-            ->get();
-           // ->paginate($this->totalPage);
-
-
+           // ->get();
+            ->paginate($this->totaPaginas);
         $types = $historico->type();
 
         return view('admin.balanco.historicos', compact('historicos', 'types'));
     }
 
 
-    public function searchHistoric(Request $request, Historico $historic)
+    public function historicoBusca(Request $request, Historico $historico)
     {
-        $dataForm = $request->except('_token');
+        $dadosForm = $request->except('_token');
 
-        $historics = $historic->search($dataForm, $this->totalPage);
+        $historicos = $historico->buscar($dadosForm, $this->totaPaginas);
 
-        $types = $historic->type();
+        $types = $historico->type();
 
-        return view('admin.balance.historics', compact('historics', 'types', 'dataForm'));
+        return view('admin.balanco.historicos', compact('historicos', 'types', 'dadosForm'));
     }
 }

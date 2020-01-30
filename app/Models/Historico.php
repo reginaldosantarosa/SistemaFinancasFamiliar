@@ -39,8 +39,41 @@ class Historico extends Model
     }
 
 
+
+    public function scopeUserAuth($query)
+    {
+        return $query->where('user_id', auth()->user()->id);
+    }
+
+
     public function userRecebedor()
     {
         return $this->belongsTo(User::class, 'user_id_transaction');
+    }
+
+
+    public function buscar(array $dadosForm, $totalPaginas)
+
+    {
+        $historicos = $this->where(function ($query) use ($dadosForm) {
+            if (isset($dadosForm['id']))
+            $query->where('id', $dadosForm['id']);
+
+
+            if (isset($dadosForm['date'])){
+                $query->where('date', $dadosForm['date']);
+            }
+
+            if (isset($dadosForm['type']))
+                $query->where('type', $dadosForm['type']);
+        })
+            // ->where('user_id', auth()->user()->id)
+           ->userAuth()
+           ->with(['userRecebedor'])
+           ->paginate($totalPaginas);
+            //->toSql();
+
+
+        return $historicos;
     }
 }

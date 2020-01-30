@@ -9,8 +9,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'Admin','prefix'=>'admin'], 
 
     Route::post('tranferir', 'BalancoController@transferirStore')->name('transferir.store'); // ja com prefixo admin
 
-
-
+    Route::any('historico-buscar', 'BalancoController@historicoBusca')->name('historico.buscar'); // ja com prefixo admin
     Route::get('historico', 'BalancoController@historico')->name('admin.historico'); // ja com prefixo admin
 
     Route::get('sacar', 'BalancoController@sacar')->name('sacar.store'); // ja com prefixo admin
@@ -22,6 +21,13 @@ Route::group(['middleware' => ['auth'],'namespace'=>'Admin','prefix'=>'admin'], 
     Route::get('deposito', 'BalancoController@deposito')->name('balanco.deposito');
     Route::get('/', 'AdminController@index')->name('admin.home');  // ja com prefixo, referencia ao admin
 });
+
+
+
+Route::post('atualizar-perfil', 'Admin\UserController@perfilUpdate')->name('perfil.update')->middleware('auth');
+Route::get('meu-perfil', 'Admin\UserController@perfil')->name('perfil')->middleware('auth');
+
+
 
 Route::get('/', 'Site\SiteController@index')->name('home');
 
