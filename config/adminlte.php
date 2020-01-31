@@ -173,11 +173,19 @@ return [
     */
 
     'menu' => [
-       // 'MENU',
+        // 'MENU',
+
+        [
+            'text'        => 'Usuário',
+            'url'         => '/meu-perfil',
+            'icon'        => 'fas fa-users-cog',
+            //'label'       => 0,
+            //'label_color' => 'success',
+        ],
 
         [
             'text'        => 'Home',
-            'url'         => 'admin/pages',
+            'url'         => '/admin',
             'icon'        => 'fas fa-home',
             //'label'       => 0,
             //'label_color' => 'success',

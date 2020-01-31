@@ -7,5 +7,10 @@
 @stop
 
 @section('content')
-    <p>Conteudo da pagina..!</p>
+<div class="box">
+    <p>Resumo financeiro..!</p>
+
+<div class="box">
+
+</div>
 @stop
