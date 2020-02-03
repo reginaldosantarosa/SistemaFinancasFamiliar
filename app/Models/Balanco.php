@@ -101,7 +101,6 @@ class Balanco extends Model
                 'message' => 'Saldo insuficiênte',
             ];
 
-
         DB::beginTransaction();
 
         /********************************************************
@@ -118,9 +117,7 @@ class Balanco extends Model
             'total_depois'           => $this->montante,
             'date'                  => date('Ymd'),
             'user_id_transaction'   => $recebedor->id
-        ]);
-
-
+        ]); 
         /********************************************************
          * Atualiza o saldo do recebedor
          * *****************************************************/
