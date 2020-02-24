@@ -10,18 +10,22 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        User::create([
-            'name'      => 'Carlos Ferreira',
-            'email'     => 'carlos@especializati.com.br',
-            'password'  => bcrypt('123456'),
-        ]);
+    public function run(){
 
-        User::create([
-            'name'      => 'Outro Usuário',
-            'email'     => 'contato@especializati.com.br',
-            'password'  => bcrypt('123456'),
-        ]);
+        $usuario=User::where('email','=','reginaldo_00@hotmail.com')->count(); //contando quantas paginas sobre existem
+
+        if ($usuario){
+            $usuario = User::where('email','=', 'reginaldo_00@hotmail.com')->first(); //pegando uma pagina
+        }
+        else{
+            $usuario=new User();
+        }
+
+
+        $usuario->name = 'Reginaldo Santa Rosa';
+        $usuario->email = 'reginaldo_00@hotmail.com';
+        $usuario->password = bcrypt('123456');
+        $usuario->save();
+
     }
 }

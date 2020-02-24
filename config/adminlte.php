@@ -16,7 +16,7 @@ return [
 
     'title' => 'Sistema Saldo',
     'title_prefix' => '',
-    'title_postfix' => ' - Especializa TI',
+    'title_postfix' => ' - Reginaldo',
 
     /*
     |--------------------------------------------------------------------------
@@ -213,7 +213,41 @@ return [
             //'label_color' => 'success',
         ],
 
-        /*
+
+        [
+            'text'        => 'Cadastros',
+            'icon'        => 'money',
+            'submenu' => [
+                [
+                    'text' => 'Add Grupos Despesas',
+                    'url' => 'gerencia/create-grupo',
+                    'icon' => 'credit-card-alt',
+
+                ],
+
+                [
+
+                    'text' => 'Consultar Grupos Despesas',
+                    'url' => 'gerencia/index-grupo',
+                    'icon' => 'history',
+
+                ],
+                [
+                    'text' => 'Add Subgrupos Despesas',
+                    'url' => 'gerencia/create-subgrupo',
+                    'icon' => 'credit-card-alt',
+
+                ],
+                [
+
+                    'text' => 'Consultar SubGrupos Despesas',
+                    'url' => 'gerencia/index-subgrupo',
+                    'icon' => 'history',
+
+                ]
+            ]
+            //'label_color' => 'success',
+        ],
 
         ['header' => 'account_settings'],
         [
@@ -277,7 +311,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'aqua',
         ],
-    */
+
     ],
 
     /*

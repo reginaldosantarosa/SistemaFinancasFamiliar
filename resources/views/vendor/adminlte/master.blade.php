@@ -42,5 +42,7 @@
 
 @yield('adminlte_js')
 
+@yield('post-script')
+
 </body>
 </html>
